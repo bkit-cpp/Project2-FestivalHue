@@ -13,5 +13,7 @@ namespace FestivalHue.Data.Entities
         public string DiaChi { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
+        public Guid UserId { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }

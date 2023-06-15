@@ -12,7 +12,8 @@ namespace FestivalHue.Data.Entities
        public string Name { get; set; }
        public string Address { get; set; }
        public string City { get; set; }
-       
+       public Guid UserId { get; set; }
+       public AppUser AppUser { get; set; }
 
     }
 }

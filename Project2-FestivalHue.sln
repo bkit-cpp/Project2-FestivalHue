@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33717.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project2-FestivalHue", "Project2-FestivalHue\Project2-FestivalHue.csproj", "{7F0B594D-00D7-40C5-863B-71E0CF408DBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project2-FestivalHue", "Project2-FestivalHue\Project2-FestivalHue.csproj", "{7F0B594D-00D7-40C5-863B-71E0CF408DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestivalHue.Core", "FestivalHue.Core\FestivalHue.Core.csproj", "{FAB0CFEE-EB75-49FF-B806-443F31D3F852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FestivalHue.Core", "FestivalHue.Core\FestivalHue.Core.csproj", "{FAB0CFEE-EB75-49FF-B806-443F31D3F852}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestivalHue.Data", "Festival.Data\FestivalHue.Data.csproj", "{F4A889B9-F259-4805-BAC7-B5642709A833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FestivalHue.Data", "Festival.Data\FestivalHue.Data.csproj", "{F4A889B9-F259-4805-BAC7-B5642709A833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestivalHue.ViewModel", "FestivalHue.ViewModel\FestivalHue.ViewModel.csproj", "{D0D263A9-A0C2-4565-B0D4-C4A02C7299DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FestivalHue.ViewModel", "FestivalHue.ViewModel\FestivalHue.ViewModel.csproj", "{D0D263A9-A0C2-4565-B0D4-C4A02C7299DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestivalHue.Utilities", "FestivalHue.Utilities\FestivalHue.Utilities.csproj", "{2E90BF50-4429-4CEC-A765-9BCA9143C1DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FestivalHue.Utilities", "FestivalHue.Utilities\FestivalHue.Utilities.csproj", "{2E90BF50-4429-4CEC-A765-9BCA9143C1DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestivalHue.BackendApi", "FestivalHue.BackendApi\FestivalHue.BackendApi.csproj", "{3BF64C82-FE42-4D1A-B72F-8193EE726C00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestivalHue-BEApi", "FestivalHue-BEApi\FestivalHue-BEApi.csproj", "{1384503C-4626-43FB-AFC6-1A807E3FFFF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{2E90BF50-4429-4CEC-A765-9BCA9143C1DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E90BF50-4429-4CEC-A765-9BCA9143C1DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E90BF50-4429-4CEC-A765-9BCA9143C1DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3BF64C82-FE42-4D1A-B72F-8193EE726C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BF64C82-FE42-4D1A-B72F-8193EE726C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BF64C82-FE42-4D1A-B72F-8193EE726C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BF64C82-FE42-4D1A-B72F-8193EE726C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1384503C-4626-43FB-AFC6-1A807E3FFFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1384503C-4626-43FB-AFC6-1A807E3FFFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1384503C-4626-43FB-AFC6-1A807E3FFFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1384503C-4626-43FB-AFC6-1A807E3FFFF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
