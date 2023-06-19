@@ -13,6 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IScheduleService, ScheduleService>();
+builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddDbContext<FestivalHueDbContext>(options => options.UseSqlServer
 (builder.Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
 var app = builder.Build();

@@ -11,6 +11,7 @@ namespace FestivalHue.Data.Entities
     {
         public int IdVe { get; set; }
         public string Name { get; set; }
+        public string SeoDescription { get; set; }
         public decimal Price { get; set; }
 
         public List<TicketInCategory> TicketInCategories { get; set; }

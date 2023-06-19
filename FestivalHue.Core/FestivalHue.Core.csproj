@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Festival.Data\FestivalHue.Data.csproj" />
+    <ProjectReference Include="..\FestivalHue.Utilities\FestivalHue.Utilities.csproj" />
     <ProjectReference Include="..\FestivalHue.ViewModel\FestivalHue.ViewModel.csproj" />
   </ItemGroup>
 

@@ -8,8 +8,8 @@ namespace FestivalHue.ViewModel.Tickets
 {
     public class TicketCreateRequest
     {
-        public int IdVe { get; set; }
         public string Name { get; set; }
+        public string SeoDescription { get; set; }
         public decimal Price { get; set; }
     }
 }

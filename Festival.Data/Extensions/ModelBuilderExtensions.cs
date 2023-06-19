@@ -38,6 +38,7 @@ namespace FestivalHue.Data.Extensions
                 {
                     IdVe = 1,
                     Name = "GheA1",
+                    SeoDescription="Đây là vé hạng thương gia",
                     Price=300000
                 }
                 ,new Ticket(
@@ -45,6 +46,7 @@ namespace FestivalHue.Data.Extensions
                 {
                     IdVe=2,
                     Name="GheA2",
+                    SeoDescription="Đây là vé hạng phổ thông ",
                     Price=500000
                 }
                 );

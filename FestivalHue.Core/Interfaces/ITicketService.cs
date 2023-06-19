@@ -10,5 +10,8 @@ namespace FestivalHue.Core.Interfaces
     public interface ITicketService
     {
         Task<List<TicketVm>> GetAllAsync();
+        Task<int> Create(TicketCreateRequest request);
+        Task<int> Update(TicketUpdateRequest request);
+        Task<int> Delete(int ticketId);
     }
 }
