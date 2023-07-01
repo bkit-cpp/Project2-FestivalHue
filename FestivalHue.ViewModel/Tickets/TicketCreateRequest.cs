@@ -11,5 +11,8 @@ namespace FestivalHue.ViewModel.Tickets
         public string Name { get; set; }
         public string SeoDescription { get; set; }
         public decimal Price { get; set; }
+        public string TripType { get; set; }
+        public int Quantity { get; set; }
+        public bool IsBooked { get; set; }
     }
 }

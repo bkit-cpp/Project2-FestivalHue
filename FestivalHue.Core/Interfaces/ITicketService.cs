@@ -1,4 +1,5 @@
-﻿using FestivalHue.ViewModel.Tickets;
+﻿using FestivalHue.ViewModel.Categories;
+using FestivalHue.ViewModel.Tickets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,10 @@ namespace FestivalHue.Core.Interfaces
         Task<int> Create(TicketCreateRequest request);
         Task<int> Update(TicketUpdateRequest request);
         Task<int> Delete(int ticketId);
+        Task<TicketVm> GetById(int ticketId);
+        Task<bool> UpdatePrice(int ticketId, decimal price);
+        Task<bool> UpdateQuantity(int ticketId, int quantity);
+        decimal GetTotalAmount();
+       Task< bool> IsTicketAvailable(int ticketId);
     }
 }

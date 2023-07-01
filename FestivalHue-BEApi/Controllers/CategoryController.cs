@@ -1,5 +1,6 @@
 ﻿using FestivalHue.Core.Interfaces;
 using FestivalHue.ViewModel.Categories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -8,6 +9,7 @@ namespace FestivalHue_BEApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+  
     public class CategoryController : ControllerBase
     {
         private ICategoryService _categoryService;

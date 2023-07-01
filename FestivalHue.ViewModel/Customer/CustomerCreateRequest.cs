@@ -1,20 +1,20 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using FestivalHue.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FestivalHue.Data.Entities
+namespace FestivalHue.ViewModel.Tickets
 {
-    public class AppUser:IdentityUser<Guid>
+    public class CustomerCreateRequest
     {
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public DateTime Dob { get; set; }
-        public List<Customer> Customers { get; set; }
-        public List<Employee> Employees { get; set; }
 
-       
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FestivalHue.Data.Migrations
 {
     [DbContext(typeof(FestivalHueDbContext))]
-    [Migration("20230615095447_UpdateDT2")]
-    partial class UpdateDT2
+    [Migration("20230627161423_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,6 +78,16 @@ namespace FestivalHue.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
+                            ConcurrencyStamp = "b7d95c8b-25fb-484c-850d-4565b12e5cac",
+                            Description = "Administrator role",
+                            Name = "admin",
+                            NormalizedName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("FestivalHue.Data.Entities.AppUser", b =>
@@ -144,6 +154,27 @@ namespace FestivalHue.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0736c6e7-b52e-423f-8f4c-332b3fad1f96",
+                            Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "bakhaipth@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Le",
+                            LastName = "BaKhai",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "bakhaipth@gmail.com",
+                            NormalizedUserName = "admin",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOi8A2xGacZV1RqesMhXhfJ8wXOo1ajeRRc25NyMQGR0jyeZSN/+x7KqPnnmYb+LXA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("FestivalHue.Data.Entities.Category", b =>
@@ -172,14 +203,14 @@ namespace FestivalHue.Data.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 6, 15, 16, 54, 46, 945, DateTimeKind.Local).AddTicks(9916),
+                            CreatedDate = new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(54),
                             Name = "Le Hoi Duong Pho",
                             status = 1
                         },
                         new
                         {
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 15, 16, 54, 46, 945, DateTimeKind.Local).AddTicks(9928),
+                            CreatedDate = new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(66),
                             Name = "Kinh Do Am Thuc",
                             status = 1
                         });
@@ -257,30 +288,29 @@ namespace FestivalHue.Data.Migrations
 
             modelBuilder.Entity("FestivalHue.Data.Entities.Schedule", b =>
                 {
-                    b.Property<int>("IdSchedule")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdSchedule"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasMaxLength(200)
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
+                    b.Property<DateTime>("EndedDate")
                         .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("TicketId")
                         .HasColumnType("int");
 
-                    b.HasKey("IdSchedule");
+                    b.Property<string>("TripType")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("TicketId");
 
@@ -289,21 +319,29 @@ namespace FestivalHue.Data.Migrations
                     b.HasData(
                         new
                         {
-                            IdSchedule = 1,
-                            CreatedDate = new DateTime(2023, 6, 15, 16, 54, 46, 945, DateTimeKind.Local).AddTicks(9987),
-                            Description = "Ok",
-                            Name = "Star Hotel-Le Hoi Duong Pho",
-                            TicketId = 1
+                            Id = 1,
+                            CreatedDate = new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(96),
+                            EndedDate = new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(95),
+                            TicketId = 1,
+                            TripType = "QuyNhon-TPHCM"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(98),
+                            EndedDate = new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(97),
+                            TicketId = 2,
+                            TripType = "Hue-DaNang"
                         });
                 });
 
             modelBuilder.Entity("FestivalHue.Data.Entities.Ticket", b =>
                 {
-                    b.Property<int>("IdVe")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdVe"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -313,22 +351,35 @@ namespace FestivalHue.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("IdVe");
+                    b.Property<int>("Quantity")
+                        .HasMaxLength(200)
+                        .HasColumnType("int");
+
+                    b.Property<string>("SeoDescription")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Tickets", (string)null);
 
                     b.HasData(
                         new
                         {
-                            IdVe = 1,
+                            Id = 1,
                             Name = "GheA1",
-                            Price = 300000m
+                            Price = 300000m,
+                            Quantity = 5,
+                            SeoDescription = "Đây là vé hạng thương gia"
                         },
                         new
                         {
-                            IdVe = 2,
+                            Id = 2,
                             Name = "GheA2",
-                            Price = 500000m
+                            Price = 500000m,
+                            Quantity = 6,
+                            SeoDescription = "Đây là vé hạng phổ thông "
                         });
                 });
 
@@ -450,6 +501,13 @@ namespace FestivalHue.Data.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
+                            RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc")
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>

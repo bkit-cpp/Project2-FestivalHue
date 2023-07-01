@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FestivalHue.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -153,14 +153,16 @@ namespace FestivalHue.Data.Migrations
                 name: "Tickets",
                 columns: table => new
                 {
-                    IdVe = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    SeoDescription = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tickets", x => x.IdVe);
+                    table.PrimaryKey("PK_Tickets", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -212,21 +214,21 @@ namespace FestivalHue.Data.Migrations
                 name: "Schedules",
                 columns: table => new
                 {
-                    IdSchedule = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    EndedDate = table.Column<DateTime>(type: "datetime2", maxLength: 200, nullable: false),
+                    TripType = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", maxLength: 200, nullable: false),
                     TicketId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Schedules", x => x.IdSchedule);
+                    table.PrimaryKey("PK_Schedules", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Schedules_Tickets_TicketId",
                         column: x => x.TicketId,
                         principalTable: "Tickets",
-                        principalColumn: "IdVe",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -250,7 +252,7 @@ namespace FestivalHue.Data.Migrations
                         name: "FK_TicketInCategories_Tickets_TicketId",
                         column: x => x.TicketId,
                         principalTable: "Tickets",
-                        principalColumn: "IdVe",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -269,7 +271,7 @@ namespace FestivalHue.Data.Migrations
                         name: "FK_TicketMessages_Tickets_TicketId",
                         column: x => x.TicketId,
                         principalTable: "Tickets",
-                        principalColumn: "IdVe",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -284,18 +286,47 @@ namespace FestivalHue.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "AppRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
+                values: new object[] { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "b7d95c8b-25fb-484c-850d-4565b12e5cac", "Administrator role", "admin", "admin" });
+
+            migrationBuilder.InsertData(
+                table: "AppUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), new Guid("69bd714f-9576-45ba-b5b7-f00649be00de") });
+
+            migrationBuilder.InsertData(
+                table: "AppUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Dob", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "0736c6e7-b52e-423f-8f4c-332b3fad1f96", new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "bakhaipth@gmail.com", true, "Le", "BaKhai", false, null, "bakhaipth@gmail.com", "admin", "AQAAAAEAACcQAAAAEOi8A2xGacZV1RqesMhXhfJ8wXOo1ajeRRc25NyMQGR0jyeZSN/+x7KqPnnmYb+LXA==", null, false, "", false, "admin" });
+
+            migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "CreatedDate", "Name", "status" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 6, 15, 10, 53, 56, 338, DateTimeKind.Local).AddTicks(413), "Le Hoi Duong Pho", 0 },
-                    { 2, new DateTime(2023, 6, 15, 10, 53, 56, 338, DateTimeKind.Local).AddTicks(423), "Kinh Do Am Thuc", 0 }
+                    { 1, new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(54), "Le Hoi Duong Pho", 1 },
+                    { 2, new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(66), "Kinh Do Am Thuc", 1 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Tickets",
-                columns: new[] { "IdVe", "Name", "Price" },
-                values: new object[] { 1, "GheA1", 300000m });
+                columns: new[] { "Id", "Name", "Price", "Quantity", "SeoDescription" },
+                values: new object[,]
+                {
+                    { 1, "GheA1", 300000m, 5, "Đây là vé hạng thương gia" },
+                    { 2, "GheA2", 500000m, 6, "Đây là vé hạng phổ thông " }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Schedules",
+                columns: new[] { "Id", "CreatedDate", "EndedDate", "TicketId", "TripType" },
+                values: new object[] { 1, new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(96), new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(95), 1, "QuyNhon-TPHCM" });
+
+            migrationBuilder.InsertData(
+                table: "Schedules",
+                columns: new[] { "Id", "CreatedDate", "EndedDate", "TicketId", "TripType" },
+                values: new object[] { 2, new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(98), new DateTime(2023, 6, 27, 23, 14, 23, 81, DateTimeKind.Local).AddTicks(97), 2, "Hue-DaNang" });
 
             migrationBuilder.InsertData(
                 table: "TicketInCategories",

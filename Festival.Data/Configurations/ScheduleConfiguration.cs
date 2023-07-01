@@ -17,11 +17,11 @@ namespace FestivalHue.Data.Configurations
         public void Configure(EntityTypeBuilder<Schedule> builder)
         {
             builder.ToTable("Schedules");
-            builder.HasKey(x => x.IdSchedule);
-            builder.Property(x => x.IdSchedule).UseIdentityColumn();
-            builder.Property(x => x.Name).HasMaxLength(200).IsRequired();
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.CreatedDate).HasMaxLength(200).IsRequired();
-            builder.Property(x => x.Description).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.EndedDate).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.TripType).HasMaxLength(200).IsRequired();
             builder.HasOne(x => x.Ticket).
             WithMany(x => x.Schedules).HasForeignKey(x => x.TicketId);
         }

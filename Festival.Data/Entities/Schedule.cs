@@ -8,9 +8,9 @@ namespace FestivalHue.Data.Entities
 {
     public class Schedule
     {
-        public int IdSchedule { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public int Id { get; set; }
+        public DateTime EndedDate { get; set; }
+        public string TripType { get; set; }
         public DateTime CreatedDate { get; set; }
         public int TicketId { get; set; }
         public Ticket Ticket { get; set; }

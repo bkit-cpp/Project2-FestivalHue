@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FestivalHue.Core.Services
+namespace FestivalHue.ViewModel.Tickets
 {
-    public class UserService
+    public class CustomerDeleteRequest
     {
+        public int IdCustomer { get; set; }
     }
 }

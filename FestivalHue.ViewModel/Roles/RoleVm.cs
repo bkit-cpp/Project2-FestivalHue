@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FestivalHue.ViewModel.Schedules
+namespace FestivalHue.ViewModel.Roles
 {
-    public class ScheduleEditRequest
+    public  class RoleVm
     {
-        public int IdSchedule { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public int TicketId { get; set; }
-       
     }
 }
