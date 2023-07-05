@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FestivalHue.ViewModel.Tickets
+namespace FestivalHue.ViewModel.Customer
 {
     public class CustomerCreateRequest
     {

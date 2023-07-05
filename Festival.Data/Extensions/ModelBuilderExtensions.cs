@@ -19,15 +19,15 @@ namespace FestivalHue.Data.Extensions
               new AppConfig() { Key = "HomeKeyword", Value = "This is keyword of eShopSolution" },
               new AppConfig() { Key = "HomeDescription", Value = "This is description of eShopSolution" }
               );
-            modelBuilder.Entity<Category>().HasData(
-               new Category()
+            modelBuilder.Entity<CategoryOfEvent>().HasData(
+               new CategoryOfEvent()
                {
                    CategoryId = 1,
                    Name= "Le Hoi Duong Pho",
                   CreatedDate=DateTime.Now,
                   status=Status.Active
                },
-                new Category()
+                new CategoryOfEvent()
                 {
                     CategoryId = 2,
                     Name = "Kinh Do Am Thuc",
@@ -56,26 +56,27 @@ namespace FestivalHue.Data.Extensions
                     IsBooked=true
                 }
                 );
-            modelBuilder.Entity<Schedule>().HasData(
-             new Schedule()
+            modelBuilder.Entity<NewsOfSchedule>().HasData(
+             new NewsOfSchedule()
              {
                  Id = 1,
                 TicketId=1,
                  EndedDate = DateTime.Now,
                  CreatedDate = DateTime.Now,
-                 TripType = "QuyNhon-TPHCM"
+                 TripType = "QuyNhon-TPHCM",
+                 Content="Day la Mot Chuyen Di thu Vi"
 
              }
-             , new Schedule(
+             , new NewsOfSchedule(
              )
              {
                  Id = 2,
                  TicketId=2,
                  EndedDate=DateTime.Now,
                  CreatedDate=DateTime.Now,
-                 TripType="Hue-DaNang"
-                
-               
+                 TripType="Hue-DaNang",
+                 Content = "Day la Mot Chuyen Di Tuyet Voi"
+
              }
              );
        

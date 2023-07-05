@@ -22,9 +22,10 @@ builder.Services.AddDbContext<FestivalHueDbContext>(options => options.UseSqlSer
 builder.Services.AddIdentity<AppUser, AppRole>()
     .AddEntityFrameworkStores<FestivalHueDbContext>()
     .AddDefaultTokenProviders();
-builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICategoryOfEventService, CategoryofEventService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<INewsOfScheduleService, NewsOfScheduleService>();
 builder.Services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
 builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
 builder.Services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
@@ -38,7 +39,7 @@ builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Emai
 builder.Services.AddSwaggerGen(
  c =>
  {
-     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger eShop Solution", Version = "v1" });
+     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger FestivalHue", Version = "v1" });
      c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
      {
          Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n

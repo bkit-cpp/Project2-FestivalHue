@@ -14,16 +14,21 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using QRCoder;
+using ZXing.Common;
+using ZXing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace FestivalHue.Core.Services
 {
     public class TicketService:ITicketService
     {
         private FestivalHueDbContext _context;
-       
-        public TicketService(FestivalHueDbContext context)
+        private readonly EmailSettings emailSettings;
+        public TicketService(FestivalHueDbContext context, IOptions<EmailSettings> options)
         {
             _context = context;
+            this.emailSettings = options.Value;
         }
 
         public async Task<int> Create(TicketCreateRequest request)
@@ -35,9 +40,9 @@ namespace FestivalHue.Core.Services
                 Price = request.Price,
                 Quantity=request.Quantity,
                 IsBooked=request.IsBooked,
-                Schedules=new List<Schedule>()
+                Schedules=new List<NewsOfSchedule>()
                 {
-                    new Schedule()
+                    new NewsOfSchedule()
                     {
                         CreatedDate=DateTime.Now,
                         EndedDate=DateTime.Now,
@@ -63,7 +68,7 @@ namespace FestivalHue.Core.Services
         public async Task<List<TicketVm>> GetAllAsync()
         {
             var query = from c in _context.Tickets
-                        join ct in _context.Schedules on c.Id equals ct.Id
+                        join ct in _context.NewsOfSchedules on c.Id equals ct.Id
                         select new { c,ct };//Truy Van LinQ
             return await query.Select(x => new TicketVm()
             {
@@ -80,7 +85,7 @@ namespace FestivalHue.Core.Services
         public async Task<int> Update(TicketUpdateRequest request)
         {
             var ticket = await _context.Tickets.FindAsync(request.Id);
-            var schedule= await _context.Schedules.
+            var schedule= await _context.NewsOfSchedules.
               FirstOrDefaultAsync(x => x.TicketId== request.Id);
             if (ticket == null||schedule==null)
                 throw new FestivalHueException($"Can't find product with id:{request.Id}");
@@ -135,7 +140,7 @@ namespace FestivalHue.Core.Services
         public async Task<TicketVm> GetById(int ticketId)
         {
             var query = from c in _context.Tickets
-                        join ct in _context.Schedules on c.Id equals ct.Id
+                        join ct in _context.NewsOfSchedules on c.Id equals ct.Id
                         where c.Id==ticketId
                         select new { c,ct };
             return await query.Select(x => new TicketVm()
@@ -150,12 +155,13 @@ namespace FestivalHue.Core.Services
 
             }).FirstOrDefaultAsync();
         }
-         public byte[] ImageToByteArray(Image ImageIn)
-        {
+      /*   public async static Task<byte[]>  ImageToByteArray(Image ImageIn)
+         {
             MemoryStream ms = new MemoryStream();
             ImageIn.Save(ms, ImageFormat.Jpeg);
-            return ms.ToArray();
-        }
+            return  ms.ToArray();
+         }
+     */
     }
 }
 

@@ -114,8 +114,8 @@ namespace FestivalHue.Core.Services
                 PhoneNumber = request.PhoneNumber,
 
             };
-            request.Title = "Welcome to our Web";
-            request.Body = "Welcome to our Web";
+            request.Title = "Welcome to festivalHue";
+            request.Body = "Welcome to our festivalHue";
             var result = await _userManager.CreateAsync(user, request.Password);
             var email = new MimeMessage();
             email.Sender = MailboxAddress.Parse(emailSettings.Email);

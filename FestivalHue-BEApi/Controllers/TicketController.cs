@@ -6,10 +6,23 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using QRCoder;
+
 using System.Drawing;
-using ZXing.Common;
-using ZXing;
+using System.Drawing.Imaging;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
+using System.IO.Pipelines;
+using System.Xml.Linq;
+using QRCoder;
+using ZXing.QrCode.Internal;
+using FestivalHue.Data.Entities;
+using System.Data;
+using FestivalHue.Data.EF;
+using ClosedXML.Excel;
+using MailKit.Security;
+using MimeKit;
+using Org.BouncyCastle.Asn1.Ocsp;
+using Microsoft.Extensions.Options;
 
 namespace FestivalHue_BEApi.Controllers
 {
@@ -19,9 +32,13 @@ namespace FestivalHue_BEApi.Controllers
     public class TicketController : ControllerBase
     {
         private ITicketService _ticketService;
-        public TicketController(ITicketService ticketService)
+        private FestivalHueDbContext _context;
+        private readonly EmailSettings emailSettings;
+        public TicketController(ITicketService ticketService, FestivalHueDbContext context, IOptions<EmailSettings> options)
         {
             _ticketService = ticketService;
+            _context = context;
+            this.emailSettings = options.Value;
         }
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -75,7 +92,7 @@ namespace FestivalHue_BEApi.Controllers
                 return Ok();
             return BadRequest();
         }
-        [HttpPut("{ticketId}/{quantity}")]
+        [HttpPut("{ticketId}/quantity")]
         public async Task<IActionResult>UpdateQuantity(int ticketId, int quantity)
         {
             var IsSuccessFull = await _ticketService.UpdateQuantity(ticketId, quantity);
@@ -103,13 +120,105 @@ namespace FestivalHue_BEApi.Controllers
             var isAvailable = await _ticketService.GetById(ticketId);
             if (isAvailable.IsBooked==true)
             {
-                return Ok("Ticket is available");
+                var email = new MimeMessage();
+                email.Sender = MailboxAddress.Parse(emailSettings.Email);
+                email.To.Add(MailboxAddress.Parse("bakhaipth@gmail.com"));
+                email.Subject = isAvailable.SeoDescription;
+                var builder = new BodyBuilder();
+                builder.HtmlBody = "Ticket is available";
+                email.Body = builder.ToMessageBody();
+                using var smtp = new MailKit.Net.Smtp.SmtpClient();
+                smtp.Connect(emailSettings.Host, emailSettings.Port, SecureSocketOptions.StartTls);
+                smtp.Authenticate(emailSettings.Email, emailSettings.Password);
+                await smtp.SendAsync(email);
+                smtp.Disconnect(true);
+                QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode("Ticket is available", QRCodeGenerator.ECCLevel.Q);
+                QRCoder.QRCode qrCode = new QRCoder.QRCode(qrCodeData);
+                Bitmap qrCodeImage = qrCode.GetGraphic(10);
+                return File(BitmapToBytes(qrCodeImage), "image/jpeg");
             }
             else
             {
                 return BadRequest("Ticket is unavailable");
             }
         }
+        private static Byte[] BitmapToBytes(Bitmap img)
+        {
+            using (MemoryStream stream = new MemoryStream())
+            {
+                img.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                return stream.ToArray();
+            }
+        }
+        [HttpGet]
+        [Route("qenerate/{ticketId}")]
+        public async Task< IActionResult> GetQrCode(int ticketId)
+        {
+            var ticket = await _ticketService.GetById(ticketId);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(ticket.Name, QRCodeGenerator.ECCLevel.Q);
+            QRCoder.QRCode qrCode = new QRCoder.QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(10);
+            return File(BitmapToBytes(qrCodeImage), "image/jpeg");
+        }
+        [NonAction]
+        private DataTable GetData()
+        {
+            DataTable dt = new DataTable();
+            dt.TableName = "dbo.Tickets";
+            dt.Columns.Add("Id", typeof(int));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("SeoDescription", typeof(string));
+            dt.Columns.Add("Price", typeof(decimal));
+            dt.Columns.Add("Quantity", typeof(int));
+            dt.Columns.Add("IsBooked", typeof(bool));
+            var list = _context.Tickets.ToList();
+            if (list.Count > 0)
+            {
+                list.ForEach(item =>
+                {
+                    dt.Rows.Add(item.Id, item.Name, item.SeoDescription, item.Price, item.Quantity, item.IsBooked);
+                });
+            }
+            return dt;
+        }
+        [HttpGet("generateExcel")]
+        public async Task<IActionResult> GenerateExcel()
+        {
+            var ticketdt = GetData();
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.AddWorksheet(ticketdt, "TicketRecord");
+                using(MemoryStream ms=new MemoryStream())
+                {
+                    wb.SaveAs(ms);
+                    return File(ms.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Ticket.xlsx");
+                }
+            }
+        }
+        /* public byte[] ImageToByteArray(System.Drawing.Image ImageIn)
+           {
+               MemoryStream ms = new MemoryStream();
+               ImageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+               return ms.ToArray();
+           }
+           [HttpGet("GeneratedQrCode")]
+           public async Task<IActionResult> GenerateQrcode(string QrCodeText)
+           {
+               QRCodeGenerator qrGenerator = new QRCodeGenerator();
+               QRCodeData qrCodeData = qrGenerator.CreateQrCode(QrCodeText, QRCodeGenerator.ECCLevel.Q);
+               QRCoder.QRCode qrCode = new QRCoder.QRCode(qrCodeData);
+               System.Drawing.Image qrCodeImage = qrCode.GetGraphic(20);
+               var bytes = ImageToByteArray(qrCodeImage);
+               return File(bytes, "image/png");
+
+           }
+        */
         /*
         private bool ValidateQRCode(string qrCodeContent)
         {
@@ -154,5 +263,6 @@ namespace FestivalHue_BEApi.Controllers
         }
     }
         */
-}
+
+    }
 }

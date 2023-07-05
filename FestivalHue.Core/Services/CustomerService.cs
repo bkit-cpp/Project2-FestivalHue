@@ -3,7 +3,9 @@ using FestivalHue.Data.EF;
 using FestivalHue.Data.Entities;
 using FestivalHue.Utilities.Exceptions;
 using FestivalHue.ViewModel.Categories;
-using FestivalHue.ViewModel.Tickets;
+using FestivalHue.ViewModel.Common;
+using FestivalHue.ViewModel.Customer;
+using FestivalHue.ViewModel.Users;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -89,6 +91,7 @@ namespace FestivalHue.Core.Services
             }).FirstOrDefaultAsync();
         }
 
+ 
         public async Task<int> Update(CustomerUpdateRequest request)
         {
             var customer = await _context.Customers.FindAsync(request.IdCustomer);
@@ -100,5 +103,6 @@ namespace FestivalHue.Core.Services
             customer.City = request.City;
             return await _context.SaveChangesAsync();
         }
+        
     }
 }

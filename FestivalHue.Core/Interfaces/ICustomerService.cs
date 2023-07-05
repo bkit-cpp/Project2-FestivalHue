@@ -1,4 +1,6 @@
-﻿using FestivalHue.ViewModel.Tickets;
+﻿using FestivalHue.ViewModel.Common;
+using FestivalHue.ViewModel.Customer;
+using FestivalHue.ViewModel.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;

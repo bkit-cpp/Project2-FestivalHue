@@ -17,6 +17,6 @@ namespace FestivalHue.Data.Entities
         public bool IsBooked { get; set; }
         public List<TicketInCategory> TicketInCategories { get; set; }
         public List<TicketMessage> TicketMessages { get; set; }
-        public List<Schedule> Schedules { get; set; }
+        public List<NewsOfSchedule> Schedules { get; set; }
     }
 }
