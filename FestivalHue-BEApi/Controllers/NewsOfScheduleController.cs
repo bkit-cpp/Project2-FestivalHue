@@ -2,6 +2,7 @@
 using FestivalHue.Data.EF;
 using FestivalHue.Data.Entities;
 using FestivalHue.ViewModel.NewOfSchedule;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace FestivalHue_BEApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class NewsOfScheduleController : ControllerBase
     {
         private INewsOfScheduleService _newofscheduleService;

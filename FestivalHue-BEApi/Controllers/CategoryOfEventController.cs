@@ -9,7 +9,7 @@ namespace FestivalHue_BEApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-  
+    [Authorize]  
     public class CategoryOfEventController : ControllerBase
     {
         private ICategoryOfEventService _categoryService;

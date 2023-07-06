@@ -46,7 +46,8 @@ namespace FestivalHue.Core.Services
                     {
                         CreatedDate=DateTime.Now,
                         EndedDate=DateTime.Now,
-                        TripType=request.TripType
+                        TripType=request.TripType,
+                        Content=request.Content
                     }
                 }
                 
@@ -78,6 +79,7 @@ namespace FestivalHue.Core.Services
               Price=x.c.Price,
               Quantity=x.c.Quantity,
               TripType=x.ct.TripType,
+              Content=x.ct.Content,
               IsBooked=x.c.IsBooked
             }).ToListAsync();
         }
@@ -151,7 +153,8 @@ namespace FestivalHue.Core.Services
                 TripType=x.ct.TripType,
                 Price=x.c.Price,
                 Quantity=x.c.Quantity,
-                IsBooked=x.c.IsBooked
+                Content = x.ct.Content,
+                IsBooked =x.c.IsBooked
 
             }).FirstOrDefaultAsync();
         }

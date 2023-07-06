@@ -123,7 +123,7 @@ namespace FestivalHue_BEApi.Controllers
                 var email = new MimeMessage();
                 email.Sender = MailboxAddress.Parse(emailSettings.Email);
                 email.To.Add(MailboxAddress.Parse("bakhaipth@gmail.com"));
-                email.Subject = isAvailable.SeoDescription;
+                email.Subject = isAvailable.Name;
                 var builder = new BodyBuilder();
                 builder.HtmlBody = "Ticket is available";
                 email.Body = builder.ToMessageBody();
