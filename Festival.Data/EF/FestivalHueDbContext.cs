@@ -37,13 +37,15 @@ namespace FestivalHue.Data.EF
 
             modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
+
             modelBuilder.Seed();
         }
         public DbSet<AppConfig> AppConfigs { get; set; }
-        public DbSet<Category> Categorys { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<CategoryOfEvent> Categorys { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<NewsOfSchedule> NewsOfSchedules { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TicketInCategory> TicketInCategories { get; set; }
         public DbSet<TicketMessage> TicketMessages { get; set; }

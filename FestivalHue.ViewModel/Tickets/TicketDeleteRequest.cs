@@ -8,6 +8,6 @@ namespace FestivalHue.ViewModel.Tickets
 {
     public class TicketDeleteRequest
     {
-        public int IdVe { get; set; }
+        public int Id { get; set; }
     }
 }

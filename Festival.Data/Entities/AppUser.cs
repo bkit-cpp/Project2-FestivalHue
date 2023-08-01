@@ -14,5 +14,7 @@ namespace FestivalHue.Data.Entities
         public DateTime Dob { get; set; }
         public List<Customer> Customers { get; set; }
         public List<Employee> Employees { get; set; }
+
+       
     }
 }

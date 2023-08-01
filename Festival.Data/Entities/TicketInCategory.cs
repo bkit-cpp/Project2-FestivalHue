@@ -11,6 +11,6 @@ namespace FestivalHue.Data.Entities
         public int TicketId { get; set; }
         public int CategoryId { get; set; }
         public Ticket Ticket { get; set; }
-        public Category Category{ get; set; }
+        public CategoryOfEvent Category{ get; set; }
     }
 }

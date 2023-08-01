@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace FestivalHue.Data.Configurations
 {
-    public class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    public class CategoryConfiguration : IEntityTypeConfiguration<CategoryOfEvent>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public void Configure(EntityTypeBuilder<CategoryOfEvent> builder)
         {
 
             builder.ToTable("Categories");
