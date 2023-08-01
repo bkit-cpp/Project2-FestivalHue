@@ -13,6 +13,7 @@ namespace FestivalHue.Core.Interfaces
     {
         Task<List<CategoryViewModel>> GetAllAsync();
         Task<int> Create(CategoryCreateRequest request);
+
         Task<CategoryViewModel> GetById(int id);
        Task<bool> UpdateStatus(int id, int status);
     }

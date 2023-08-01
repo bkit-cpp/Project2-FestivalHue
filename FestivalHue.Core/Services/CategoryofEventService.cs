@@ -34,6 +34,7 @@ namespace FestivalHue.Core.Services
             await _context.SaveChangesAsync();
             return category.CategoryId;
 
+
         }
 
         public async Task<List<CategoryViewModel>> GetAllAsync()
