@@ -45,7 +45,8 @@ namespace FestivalHue.Core.Services
             {
                 CategoryId=x.c.CategoryId,
                 Name=x.c.Name,
-                CreatedDate=DateTime.Now
+                CreatedDate=DateTime.Now,
+                status = Status.Active
             }).ToListAsync();
         }
         public async Task<CategoryViewModel> GetById(int id)

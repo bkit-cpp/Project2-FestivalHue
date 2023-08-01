@@ -124,8 +124,6 @@ namespace FestivalHue.Data.Extensions
         Name="LebaKhai",
         Address="Quan 12",
         City="HCMC",
-        
-        
 
     }
     
