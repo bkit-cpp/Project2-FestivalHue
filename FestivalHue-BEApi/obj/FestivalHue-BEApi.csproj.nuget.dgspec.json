@@ -1,0 +1,440 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue-BEApi\\FestivalHue-BEApi.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj",
+        "projectName": "FestivalHue.Data",
+        "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue-BEApi\\FestivalHue-BEApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue-BEApi\\FestivalHue-BEApi.csproj",
+        "projectName": "FestivalHue-BEApi",
+        "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue-BEApi\\FestivalHue-BEApi.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue-BEApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.305\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj"
+              },
+              "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Core\\FestivalHue.Core.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Core\\FestivalHue.Core.csproj"
+              },
+              "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Utilities\\FestivalHue.Utilities.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Utilities\\FestivalHue.Utilities.csproj"
+              },
+              "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.ViewModel\\FestivalHue.ViewModel.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.ViewModel\\FestivalHue.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Core\\FestivalHue.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Core\\FestivalHue.Core.csproj",
+        "projectName": "FestivalHue.Core",
+        "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Core\\FestivalHue.Core.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj"
+              },
+              "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Utilities\\FestivalHue.Utilities.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Utilities\\FestivalHue.Utilities.csproj"
+              },
+              "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.ViewModel\\FestivalHue.ViewModel.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.ViewModel\\FestivalHue.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "ZXing.Net.Mobile": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Utilities\\FestivalHue.Utilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Utilities\\FestivalHue.Utilities.csproj",
+        "projectName": "FestivalHue.Utilities",
+        "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Utilities\\FestivalHue.Utilities.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.Utilities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.ViewModel\\FestivalHue.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.ViewModel\\FestivalHue.ViewModel.csproj",
+        "projectName": "FestivalHue.ViewModel",
+        "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.ViewModel\\FestivalHue.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\FestivalHue.ViewModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Source\\Repos\\bkit-cpp\\Project2-FestivalHue\\Festival.Data\\FestivalHue.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

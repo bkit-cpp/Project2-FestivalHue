@@ -1,0 +1,14 @@
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\bin\Debug\net6.0\FestivalHue.Data.deps.json
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\bin\Debug\net6.0\FestivalHue.Data.runtimeconfig.json
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\bin\Debug\net6.0\FestivalHue.Data.dll
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\bin\Debug\net6.0\FestivalHue.Data.pdb
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\FestivalHue.Data.csproj.AssemblyReference.cache
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\FestivalHue.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\FestivalHue.Data.AssemblyInfoInputs.cache
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\FestivalHue.Data.AssemblyInfo.cs
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\FestivalHue.Data.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\FestivalHue.Data.dll
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\refint\FestivalHue.Data.dll
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\FestivalHue.Data.pdb
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\FestivalHue.Data.genruntimeconfig.cache
+C:\Users\DELL\Source\Repos\bkit-cpp\Project2-FestivalHue\Festival.Data\obj\Debug\net6.0\ref\FestivalHue.Data.dll
